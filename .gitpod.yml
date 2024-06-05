@@ -1,0 +1,14 @@
+
+ports:
+  - name: Website preview
+    port: 5173
+    onOpen: open-preview
+
+tasks:
+  - name: Install Dependencies and Start Dev Server
+    init: |
+     if test -e requirements.txt; then {
+        pip install -r requirements.txt
+      } fi
+      
+    command: python main.py
